@@ -1,5 +1,11 @@
 name: Repository Events
-on: [push, pull_request, issues]
+#on: [push, pull_request, issues]
+# a pull_request and issues have different activity types... ex) assigned, unassigned, locked, review_request...
+
+on:
+  push:
+  pull_request:
+    types: [opened, assigned, reopened, synchronize]
 
 jobs:
   checkout-test:
